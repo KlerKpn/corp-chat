@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Для запуска приложения:
+1) скачайте
+2) перейдите в корневую директорию проекта с помощью cmd
+3) пропишите npm i , затем ' yarn start ' или ' npm run start '
+Приложение откроется в http://localhost:3000
+Данные для авторизации в подсказках формы
 
-## Available Scripts
+отключить авторизацию  можно в App.js , достаточно сменить в state auth: true на false
+для редактирования или удаления сообщений клините по сообщению 2 раза
 
-In the project directory, you can run:
+Реализовано : 
+1) Отправка сообщений
+2) Сохранение сообщений в локальную историю
+3) Обработка возможной ошибки локальной истории
+4) Редактирование и удаление сообщений
+5) Route (переключение меж вкладками без перезагрузки страниц)
+6) аутентификация (логин и пароль в placeholder)
+7) разделение своих и чужих сообщений
+8) можно редактировать и удалять ТОЛЬКО СВОИ сообщения
 
-### `yarn start`
+автоскрол до новых сообщений (вниз) пока не реализовано
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Использовались библиотеки :
+1) react-router-dom
+2) react-bootstrap
+3) node-sass
+4) bootstrap
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+App.js служит только для роутинга и авторизации, так сказать представитель других компонентов
+Auth.js Собирает данные из формы, затем сравнивает их на идентичность с правильными в App.js
+Header.js Учавствует в роутинге как переключатель
+DefaultChat.js Чат с основым фукционалом большая часть логики находится здесь
+CorpChat.js Идентичен "DefaultChat" 
+Contacts.js В данный момент играет декортивную роль чтоб интерфейс не казался столь пустым
+News.js Просто страничка, предназначенная для отображения каких-то новостей
+App.scss тут находятся все стили
